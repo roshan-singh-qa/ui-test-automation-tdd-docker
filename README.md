@@ -26,7 +26,7 @@ docker run -it --rm  \
   -w /ui-test-automation-tdd maven:3.6.3-jdk-11 \
   mvn test -DhubUrl=http://host.docker.internal:4444 \
     -DbrowserName=chrome \
-    -DconfigPath=./env/demo.properties \
+    -DconfigPath=./env/prod.properties \
     -DGroups=GroupName
 ```
 - GroupName
@@ -34,7 +34,7 @@ docker run -it --rm  \
     - To exclude test case: -DexcludedGroups=GroupName
 
 - ConfigFile
-    - To Run Test Cases on specific environment: -DconfigPath=./env/demo.properties
+    - To Run Test Cases on specific environment: -DconfigPath=./env/prod.properties
 
 Note: Maven needs to download the internet so this will take some time on first run. The command will populate
 your local Maven cache to speed things up on subsequent runs.
@@ -53,7 +53,7 @@ Mac, ensure the Driver is executable.
 Specify the Chrome Dri`ver when running the test.
 
 ```shell script
-mvn test -DconfigPath=./env/demo.properties -Dwebdriver.chrome.driver=/path/to/chromedriver -DGroups=GroupName
+mvn test -DconfigPath=./env/prod.properties -Dwebdriver.chrome.driver=/path/to/chromedriver -DGroups=GroupName
 ```
 
 ## Watching the tests run
